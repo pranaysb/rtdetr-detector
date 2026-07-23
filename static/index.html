@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RT-DETR v2 Object Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RT-DETR v2 <span>Visualizer</span></h1>
+            <p>Upload an image or use your webcam to test the PekingU/rtdetr_v2_r50vd model</p>
+            
+            <div class="mode-toggle">
+                <button id="mode-image" class="active">Image Upload</button>
+                <button id="mode-camera">Live Camera</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section" id="upload-section">
+                <div id="drop-zone" class="drop-zone">
+                    <span class="drop-zone__prompt">Drag & Drop image here or click to browse</span>
+                    <input type="file" name="file" id="file-input" class="drop-zone__input" accept="image/*">
+                </div>
+            </div>
+
+            <div class="workspace hidden" id="workspace">
+                <div class="canvas-container">
+                    <video id="webcam-video" autoplay playsinline style="display: none;"></video>
+                    <canvas id="image-canvas"></canvas>
+                    <div id="loading-overlay" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Analyzing...</p>
+                    </div>
+                </div>
+                
+                <aside class="sidebar">
+                    <h2>Detections</h2>
+                    <div class="controls">
+                        <label for="model-select">Model:</label>
+                        <select id="model-select" style="width: 100%; margin-bottom: 1rem; padding: 6px; border-radius: 6px; background: rgba(0,0,0,0.2); color: var(--text-color); border: 1px solid var(--border-color); font-size: 0.9rem; outline: none;">
+                            <option value="r50vd">ResNet-50 (Fast)</option>
+                            <option value="r101vd">ResNet-101 (Accurate)</option>
+                        </select>
+                        
+                        <label for="threshold">Confidence Threshold: <span id="threshold-val">50%</span></label>
+                        <input type="range" id="threshold" min="1" max="100" value="50">
+                    </div>
+                    <ul id="results-list" class="results-list">
+                        <!-- Results will be injected here -->
+                    </ul>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
