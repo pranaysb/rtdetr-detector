@@ -1,4 +1,4 @@
-# RT-DETR v2 Object Detection Web App
+# RT-DETR v2 Object Detection Web App - Open License no restrictions
 
 A professional, full-stack object detection application utilizing the state-of-the-art **RT-DETR v2** (Real-Time Detection Transformer). Built with a lightweight FastAPI backend and a beautiful, vanilla HTML/CSS/JS frontend featuring a glassmorphism design.
 
