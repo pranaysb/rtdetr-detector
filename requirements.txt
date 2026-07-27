@@ -6,3 +6,10 @@ torch
 torchvision
 Pillow
 timm
+
+# Person-in-zone intrusion module (see README.md)
+shapely      # BSD-3-Clause, confirmed via installed package metadata — see LOGS.md
+
+# Testing (geometry/debounce logic — no model weights required)
+pytest
+httpx        # required by fastapi.testclient.TestClient
