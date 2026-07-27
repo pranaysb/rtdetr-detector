@@ -1,5 +1,5 @@
 # RT-DETR Person-in-Zone Intrusion Detector
-
+(parent: Optisense )
 A FastAPI service that turns RT-DETR v2's raw, multi-class object
 detection into a real person-in-zone intrusion module: named polygon
 zones, person-only filtering at inference time (no fine-tuning, no
